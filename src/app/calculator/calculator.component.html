@@ -1,0 +1,90 @@
+<div class="theme-container">
+  <h2>CALCULATOR</h2>
+</div>
+
+<div class="calculator" [ngClass]="{ scientific: isScientific }">
+  <input [value]="expression" disabled />
+
+  <button class="toggle-btn" (click)="toggleScientific()">
+    {{ isScientific ? 'Standard' : 'Scientific' }}
+  </button>
+
+  <div class="buttons" *ngIf="!isScientific">
+    <!-- Standard layout buttons -->
+    <button (click)="pressButton('(')">(</button>
+    <button (click)="pressButton(')')">)</button>
+    <button (click)="clearEntry()">CE</button>
+    <button (click)="clearAll()">C</button>
+
+    <button (click)="pressButton('7')">7</button>
+    <button (click)="pressButton('8')">8</button>
+    <button (click)="pressButton('9')">9</button>
+    <button (click)="pressButton('+')">+</button>
+
+    <button (click)="pressButton('4')">4</button>
+    <button (click)="pressButton('5')">5</button>
+    <button (click)="pressButton('6')">6</button>
+    <button (click)="pressButton('-')">-</button>
+
+    <button (click)="pressButton('1')">1</button>
+    <button (click)="pressButton('2')">2</button>
+    <button (click)="pressButton('3')">3</button>
+    <button (click)="pressButton('*')">*</button>
+
+    <button (click)="pressButton('0')">0</button>
+    <button (click)="pressButton('.')">.</button>
+    <button (click)="calculate()">=</button>
+    <button (click)="pressButton('/')">/</button>
+  </div>
+
+  <!-- Scientific Buttons -->
+  <div class="buttons scientific-layout" *ngIf="isScientific">
+
+    <button (click)="toggleRadianMode()">
+      {{ isRadian ? 'rad' : 'deg' }}
+    </button>
+    <button (click)="toggleTrigMode()">
+      {{ isInverseTrig ? 'trig⁻¹' : 'trig' }}
+    </button>
+    <button (click)="pressButton('sqrt(')">√</button>
+    <button (click)="pressButton('(')">(</button>
+    <button (click)="pressButton(')')">)</button>
+    <button (click)="clearEntry()">CE</button>
+    <button (click)="clearAll()">C</button>
+    <button (click)="pressButton('+')">+</button>
+
+    <button (click)="pressButton('e')">e</button>
+    <button (click)="pressButton('^')">^</button>
+    <button (click)="pressButton('.')">.</button>
+    <button (click)="pressButton('7')">7</button>
+    <button (click)="pressButton('8')">8</button>
+    <button (click)="pressButton('9')">9</button>
+    <button (click)="pressButton('0')">0</button>
+    <button (click)="pressButton('-')">-</button>
+
+    <button (click)="pressButton('ln(')">ln</button>
+    <button (click)="pressButton('log(')">log</button>
+    <button (click)="pressButton('π')">π</button>
+    <button (click)="pressButton('3')">3</button>
+    <button (click)="pressButton('4')">4</button>
+    <button (click)="pressButton('5')">5</button>
+    <button (click)="pressButton('6')">6</button>
+    <button (click)="pressButton('*')">*</button>
+
+    <button *ngIf="!isInverseTrig" (click)="pressButton('sin(')">sin</button>
+    <button *ngIf="isInverseTrig" (click)="pressButton('sin⁻¹(')">sin⁻¹</button>
+    <button *ngIf="!isInverseTrig" (click)="pressButton('cos(')">cos</button>
+    <button *ngIf="isInverseTrig" (click)="pressButton('cos⁻¹(')">cos⁻¹</button>
+    <button *ngIf="!isInverseTrig" (click)="pressButton('tan(')">tan</button>
+    <button *ngIf="isInverseTrig" (click)="pressButton('tan⁻¹(')">tan⁻¹</button>
+    <button *ngIf="!isInverseTrig" (click)="pressButton('cot(')">cot</button>
+    <button *ngIf="isInverseTrig" (click)="pressButton('cot⁻¹(')">cot⁻¹</button>
+
+    <button (click)="pressButton('1')">1</button>
+    <button (click)="pressButton('2')">2</button>
+    <button (click)="calculate()">=</button>
+    <button (click)="pressButton('/')">/</button>
+    
+  </div>
+
+</div>

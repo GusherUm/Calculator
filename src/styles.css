@@ -1,0 +1,13 @@
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+  
+.light-theme {
+  background-color: #f0f0f0;
+  color: rgb(0, 0, 0.856);
+}
+  
+.dark-theme {
+  background-color: rgba(0, 0, 0, 0.856);
+  color: #f0f0f0;
+}

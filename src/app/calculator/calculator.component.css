@@ -1,0 +1,72 @@
+.theme-container{
+  text-align: center; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+  margin-top: 100px;
+}
+
+.calculator {
+  width: 300px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  background-color: #f9f9f9;
+  transition: width 0.3s ease;
+}
+
+.calculator.scientific {
+  width: 600px;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: right;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.toggle-btn {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #3edff1;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.toggle-btn:hover {
+  background-color: #80deea;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calculator.scientific .buttons {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+button {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+}
